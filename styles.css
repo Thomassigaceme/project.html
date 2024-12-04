@@ -90,6 +90,43 @@ a:hover {
   color: #007bff;
 }
 
+/* Navbar untuk layar kecil */
+@media screen and (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .navbar .nav-links.active {
+    display: block;
+  }
+
+  .navbar .nav-links li {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .navbar .logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .navbar .hamburger.active .line {
+    background-color: #fff;
+  }
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -124,6 +161,21 @@ a:hover {
 .hero .btn:hover {
   background: #007bff;
   color: #fff;
+}
+
+/* Hero Section untuk layar kecil */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    padding: 0.6rem 1rem;
+  }
 }
 
 /* Services Section */
@@ -162,7 +214,13 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-/* Portfolio Section */
+/* Layout Grid Services untuk layar kecil */
+@media screen and (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Portfolio Section */
 .portfolio {
   padding: 100px 0;
@@ -259,10 +317,10 @@ a:hover {
   background-color: #ff9933;
 }
 
-/* Responsive Grid Layout */
+/* Layout Grid Portfolio untuk layar kecil */
 @media screen and (max-width: 768px) {
   .portfolio-gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -271,74 +329,6 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
-
-/* Gaya untuk deskripsi umum */
-.section-description {
-  text-align: center;
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-/* Gaya Carousel */
-.carousel {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  margin-top: 2rem;
-}
-
-.carousel-item {
-  min-width: 100%;
-  transition: transform 0.5s ease-in-out;
-  position: relative;
-}
-
-.carousel-caption {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.carousel img,
-.carousel video {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.project-stats {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.badge {
-  background: #28a745;
-  color: white;
-  font-size: 0.8rem;
-  padding: 0.3rem 0.7rem;
-  border-radius: 3px;
-}
-
-.btn-detail {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.btn-detail:hover {
-  background: #0056b3;
-}
-
 
 /* Team Section */
 .team {
@@ -365,6 +355,19 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
+/* Layout Grid Team untuk layar kecil */
+@media screen and (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Contact Section */
 .contact {
   padding: 5rem 0;
@@ -380,39 +383,66 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
-.contact .form-group input,
-.contact .form-group textarea {
+.contact input,
+.contact textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
-.contact .btn {
-  background: #007bff;
+.contact button {
+  padding: 1rem 2rem;
+  background-color: #007bff;
   color: #fff;
-  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 5px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.contact .btn:hover {
-  background: #0056b3;
+.contact button:hover {
+  background-color: #0056b3;
+}
+
+/* Contact form untuk layar kecil */
+@media screen and (max-width: 768px) {
+  .contact form {
+    padding: 1rem;
+  }
+
+  .contact .form-group input,
+  .contact .form-group textarea {
+    padding: 0.8rem;
+  }
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 2rem 0;
-  background: #222;
+  background: #333;
   color: #fff;
+  padding: 2rem 0;
+  text-align: center;
 }
 
 footer a {
-  color: #007bff;
+  color: #fff;
+  margin: 0 1rem;
 }
 
 footer a:hover {
-  color: #0056b3;
+  color: #007bff;
+}
+
+/* Footer untuk layar kecil */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 1.5rem 0;
+  }
+
+  footer a {
+    font-size: 0.9rem;
+  }
 }
