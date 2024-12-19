@@ -33,3 +33,6 @@ function showDetails(projectId) {
 
   alert(projectDetails[projectId] || "Details not available for this project.");
 }
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+}).addTo(map);

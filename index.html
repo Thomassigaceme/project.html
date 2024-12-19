@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -169,36 +172,36 @@
         </div>
         <!-- Lead Developer -->
         <div class="team-member">
-          <img src="img/team2.jpg" alt="Jane Smith">
-          <h3>Jane Smith</h3>
+          <img src="img/Elmus.jpg" alt="Elmus">
+          <h3>Wilhelmus Nio</h3>
           <p>Lead Developer</p>
           <p class="team-bio">Expert in full-stack development, specializing in scalable web solutions.</p>
         </div>
         <!-- Creative Director -->
         <div class="team-member">
-          <img src="img/team3.jpg" alt="Emily Johnson">
-          <h3>Emily Johnson</h3>
+          <img src="img/IMG-20230728-WA0017.jpg" alt="Adel">
+          <h3>Adelheid</h3>
           <p>Creative Director</p>
           <p class="team-bio">Innovator in design and branding with a passion for storytelling.</p>
         </div>
         <!-- Digital Marketing Strategist -->
         <div class="team-member">
-          <img src="img/team4.jpg" alt="Michael Brown">
-          <h3>Michael Brown</h3>
+          <img src="img/Ganbar Tedi.jpg" alt="Tadi">
+          <h3>Tedi Naru</h3>
           <p>Digital Marketing Strategist</p>
           <p class="team-bio">Specialist in data-driven campaigns that deliver measurable ROI.</p>
         </div>
         <!-- UI/UX Designer -->
         <div class="team-member">
-          <img src="img/team5.jpg" alt="Sophia Lee">
-          <h3>Sophia Lee</h3>
+          <img src="img/Lista.jpg" alt="Lista">
+          <h3>Felisita Dengi</h3>
           <p>UI/UX Designer</p>
           <p class="team-bio">Creates intuitive interfaces focused on user-centric design.</p>
         </div>
         <!-- SEO Specialist -->
         <div class="team-member">
-          <img src="img/team6.jpg" alt="Daniel Garcia">
-          <h3>Daniel Garcia</h3>
+          <img src="img/Nus.jpg" alt="Nus">
+          <h3>Florianus dose</h3>
           <p>SEO Specialist</p>
           <p class="team-bio">Optimizes online presence with advanced SEO techniques.</p>
         </div>
@@ -206,25 +209,80 @@
     </div>
   </section>
   
-
+            
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <form>
-          <div class="form-group">
-            <input type="text" placeholder="Your Name">
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Your Email">
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send</button>
-        </form>
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+
+    <!-- Form Section -->
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required>
       </div>
-    </section>
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+
+    <!-- WhatsApp Section -->
+    <div class="whatsapp-link">
+      <p>Or contact us directly via WhatsApp:</p>
+      <a 
+        href="https://wa.me/62881038724383?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services." 
+        target="_blank" 
+        class="btn btn-whatsapp">
+        <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp Logo" class="whatsapp-icon">
+        Chat with Us
+      </a>
+    </div>
+
+    <!-- Additional Contact Info -->
+    <div class="contact-info">
+      <p><strong>Address:</strong> Denpasar - Bali - Indonesia</p>
+      <p><strong>Email:</strong> <a href="mailto:Skyline@gmail.com">Skyline@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+62881038724383">0881 0387 24383</a></p>
+    </div>
+
+    <!-- Business Hours -->
+    <div class="hours">
+      <h3>Business Hours</h3>
+      <ul>
+        <li>Monday - Friday: 9:00 AM - 5:00 PM</li>
+        <li>Saturday: 10:00 AM - 2:00 PM</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
+
+    <!-- OpenStreetMap -->
+    <div id="map" style="width: 100%; height: 300px;"></div>
+  </div>
+</section>
+
+<!-- Leaflet.js Library -->
+<link rel="stylesheet" href="https://unpkg.com/[email protected]/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+<script src="https://unpkg.com/[email protected]/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+<script>
+  // Inisialisasi peta
+  var map = L.map('map').setView([-8.7373595, 115.1705545], 16);
+
+  // Menambahkan tile layer OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Menambahkan marker pada lokasi
+  var marker = L.marker([-8.7373595, 115.1705545]).addTo(map);
+
+  // Menambahkan popup pada marker
+  marker.bindPopup("<b>Lokasi Kami</b><br>Jalan Kediri Gang Ksatria 2").openPopup();
+</script>
 
     <!-- Footer -->
     <footer>
